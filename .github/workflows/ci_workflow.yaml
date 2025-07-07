@@ -44,7 +44,7 @@ jobs:
         run: |
           IMAGE_NAME="hafelen09/churn-prediction-model"
           
-          # 1. Bangun image secara lokal
+          # 1. Bangunn image secara lokal
           mlflow models build-docker --model-uri "runs:/${{ env.RUN_ID }}/model" --name "${IMAGE_NAME}"
           
           # 2. Push image tersebut secara eksplisit
