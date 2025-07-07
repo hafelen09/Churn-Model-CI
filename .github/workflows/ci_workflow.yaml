@@ -46,15 +46,14 @@ jobs:
       # Langkah 7: Membangun dan Mendorong (Push) Docker image
       - name: Build and Push Docker image explicitly
         # PENTING: Ganti 'username_anda' dengan username Docker Hub Anda
+        env:
+          IMAGE_NAME: username_anda/churn-prediction-model
         run: |
-          IMAGE_NAME="username_anda/churn-prediction-model"
-          
-<<<<<<< HEAD
           # 1. Bangun image secara lokal dari path yang sudah pasti
-          mlflow models build-docker --model-uri "./MLProject/output/model" --name "${IMAGE_NAME}"
+          mlflow models build-docker --model-uri "./MLProject/output/model" --name "$IMAGE_NAME"
           
           # 2. Push image tersebut secara eksplisit ke Docker Hub
-          echo "Pushing image ${IMAGE_NAME}:latest to Docker Hub..."
-          docker push "${IMAGE_NAME}:latest"
+          echo "Pushing image $IMAGE_NAME:latest to Docker Hub..."
+          docker push "$IMAGE_NAME:latest"
           echo "Docker push command finished."
 
