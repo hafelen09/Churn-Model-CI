@@ -47,7 +47,7 @@ jobs:
       - name: Build and Push Docker image explicitly
         # PENTING: Ganti 'username_anda' dengan username Docker Hub Anda
         env:
-          IMAGE_NAME: username_anda/churn-prediction-model
+          IMAGE_NAME: hafelen09/churn-prediction-model
         run: |
           # 1. Bangun image secara lokal dari path yang sudah pasti
           mlflow models build-docker --model-uri "./MLProject/output/model" --name "$IMAGE_NAME"
